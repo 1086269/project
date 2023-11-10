@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <title>User Profile Page</title>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.add('show');
+        }
+
+        function closeMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.remove('show');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>User Profile</h1>
+    </header>
+    <div class="menu" onmouseleave="closeMenu()">
+        <!-- Add a close button inside the menu -->
+        <i class="fas fa-times close-button" onclick="closeMenu()"></i>
+        <ul>
+            <li><a href="/medication/<%= userId %>">Medication</a></li>
+            <!-- Add more menu items here -->
+        </ul>
+    </div>
+    <div class="profile">
+     <img src="<%= userImage %>" alt="User Image">
+        <div class="profile-info">
+            <h2><%= fullName %></h2>
+            <p>Age: <%= age %></p>
+            <p>Gender: <%= gender %></p>
+            <p>Blood Type: <%= bloodType %></p>
+            <p>Height: <%= Height %> cm</p>
+            <p>Weight: <%= weight %> kg</p>
+            <p>Email:  <%= email %></p>
+            <p>Address:  <%= address %></p>
+            <p>Diagnosis: <%= diagnosis %></p>
+            <p>Insurance Plan: <%=insurancePlan%></p>
+            <p>Family Doctor: <%= familyDoctor %></p>
+        </div>
+    </div>
+</body>
+</html>

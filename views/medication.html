@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">    
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Medication Page</title>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.add('show');
+        }
+
+        function closeMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.remove('show');
+        }
+        async function fetchTranslation(text, language) {
+    const response = await fetch('/api/translate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text, language }),
+    });
+
+    const translatedText = await response.json();
+    return translatedText.translation || text;
+}
+
+
+
+async function changeLanguage(language) {
+    // Fetch the translated content for each element inside the medication-card
+    const titleElement = document.querySelector('.medication-title');
+    const suggestedUseElement = document.querySelector('.medication-card p');
+    const descriptionElement = document.querySelector('.medication-description');
+
+    // Fetch translations for each element
+    const translatedTitle = await fetchTranslation(titleElement.innerText, language);
+    const translatedSuggestedUse = await fetchTranslation(suggestedUseElement.innerText, language);
+    const translatedDescription = await fetchTranslation(descriptionElement.innerText, language);
+
+    // Update the content of each element with the translated text
+    titleElement.innerHTML = translatedTitle;
+    suggestedUseElement.innerHTML = translatedSuggestedUse;
+    descriptionElement.innerHTML = translatedDescription;
+}
+
+  descriptionElement.innerHTML = translatedDescription;
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>Medication Page</h1>
+    </header>
+    <div class="menu" onmouseleave="closeMenu()">
+        <i class="fas fa-times close-button" onclick="closeMenu()"></i>
+        <ul>
+          <li><a href="/profile/<%= userId %>">User Profile</a></li>
+        </ul>
+    </div>
+
+    <div class="medication-card">
+        <img src="<%= medicineImage %>" alt="Medication 2">
+        <div class="medication-title">Medicine Name: <%= medicineName %></div>
+        <p>Suggested Use: <%= suggestedUse %></p>
+        <div class="medication-description">
+            Medicine Description: 
+            <%=  medicineDescription %>  
+        </div>
+    </div>
+
+
+
+    <!-- Add language buttons -->
+    <div class="language-buttons">
+        <button onclick="changeLanguage('ar')">Arabic</button>
+        <button onclick="changeLanguage('es')">Spanish</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <!-- Add more language buttons as needed -->
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+
+.login h1 {
+    text-align: center;
+    color: #007BFF;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+.login form input[type="password"],
+.login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.login form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transition: background-color 0.2s;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.medication-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.medication-card img {
+    max-width: 100%;
+}
+
+.medication-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.medication-description {
+    font-size: 16px;
+}
+
+.profile {
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.profile img {
+    max-width: 250px;
+    max-height: 250px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.profile-info {
+    font-family: Arial, sans-serif;
+}
+
+.profile h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile p {
+    margin: 5px 0;
+}
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 24px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu.show {
+    left: 0;
+}
+
+/* Add a class to style the 'close' button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.medication-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.medication-card img {
+    max-width: 25%;
+}
+
+.medication-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.medication-description {
+    font-size: 16px;
+}
+       /* Add style for language buttons */
+       .language-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .language-buttons button {
+        margin: 0 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/Users/asma/Desktop/cloud computing/medical/css/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="login" id="loginshow">
+        <h1 id="textshow">Login</h1>
+        <form id="login-form" action="/login" method="POST">
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="submit" value="Login">
+          
+            <p>Don't have an account? <a href="#" id="show-registration-link">Register</a></p>
+        </form>
+    </div>
+
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const registrationForm = document.getElementById("registration-form");
+        const showRegistrationLink = document.getElementById("show-registration-link");
+        const showLoginLink = document.getElementById("show-login-link");
+
+        showRegistrationLink.addEventListener("click", function() {
+            loginForm.style.display = "none";
+            textshow.style.display = "none";
+            registrationForm.style.display = "block";
+        });
+
+        // showLoginLink.addEventListener("click", function() {
+        //     loginForm.style.display = "block";
+        //     textshow.style.display = "block";
+        //     loginshow.style.display = "block";
+        //     registrationForm.style.display = "none";
+        // });
+
+        function formatMobileNumber(input) {
+            // Remove all non-numeric characters from the input
+            let cleaned = input.value.replace(/\D/g, '');
+
+            // Format the mobile number (e.g., XXX-XXX-XXXX)
+            if (cleaned.length === 10) {
+                cleaned = cleaned.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+            }
+
+            // Update the input value
+            input.value = cleaned;
+        }
+    </script>
+    
+</body>
+				
+
+</html>
+
