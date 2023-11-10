@@ -13,7 +13,7 @@ module.exports = (db) => {
     });
 
     router.post('/', (req, res) => {
-        console.log("login", req);
+        // console.log("login", req);
         const { username, password } = req.body;
 
         // Implement your login logic here, e.g., querying the database
@@ -22,7 +22,7 @@ module.exports = (db) => {
         // Example: Check if the user exists in the database
         db.find({ selector: { username, password } }, (err, result) => {
             if (err) {
-                console.error(err);
+                // console.error(err);
                 res.status(500).send('Internal Server Error');
                 return;
             }
